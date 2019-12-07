@@ -26,6 +26,7 @@ public class ProducerWithCallback {
         ProducerRecord<String, String> record = new ProducerRecord<String, String>("my_first_topic", "Hello World");
 
         // Finally, send data
+        // The callback allows as to perform some action when the message is send.
         producer.send(record, new Callback() {
             public void onCompletion(RecordMetadata recordMetadata, Exception e) {
                 if (e == null){
@@ -40,10 +41,10 @@ public class ProducerWithCallback {
         });
 
         // Flush producer
+        // This is required as the `send` method is asynchronous, it forces to flush the messages
         producer.flush();
 
         // Flush and close producer
         producer.close();
-
     }
 }

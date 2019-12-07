@@ -39,7 +39,6 @@ public class MessagesWithKeys {
                         logger.info("\n******************************************************************************************");
                         logger.info("Received meta data: ");
                         logger.info("Topic: "+ recordMetadata.topic());
-                        logger.info("Key: " + recordMetadata.);
                         logger.info("Partition: " + recordMetadata.partition());
                         logger.info("Offset: " + recordMetadata.offset());
                         logger.info("******************************************************************************************\n");
